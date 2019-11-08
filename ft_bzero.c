@@ -6,22 +6,25 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:31:34 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/07 14:13:45 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2019/11/08 11:02:58 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <strings.h>
 
 void	bzero(void *s, size_t n)
 {
 	int i;
 
 	if (n == 0)
-
+		return (0);
 	else
 	{
 		i = 0;
 		while (i < n)
 		{
-			
+			s[i] = 0;
 		}
+		s[i] = '\0';
 	}
 }
