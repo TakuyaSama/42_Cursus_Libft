@@ -1,41 +1,53 @@
-# Main program
-PROGNAME = libft
-SRC_MAIN = main.c
-OBJ_MAIN = main.o
-# Library libft.a
-LIBRUSH = libft.a
-SRCS_RUSH = $(shell find rush -name "*.c")
-OBJS_RUSH = $(patsubst %.c, %.o, $(SRCS_RUSH))
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-INCFLAGS = -I includes
-LIBFLAGS = -L lib
-AR = ar -rc
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/11/08 13:03:20 by adiaz-lo          #+#    #+#              #
+#    Updated: 2019/11/08 13:11:02 by adiaz-lo         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-all: $(PROGNAME)
+NAME = libft.a
 
-$(PROGNAME): $(LIBRUSH) $(OBJ_MAIN)
-	@echo Compiling Binary File: $@ ...
-	$(CC) $(CFLAGS) $(LIBFLAGS) -l $(OBJ_MAIN) $(LIBRUSH) -o $@
+SRCS = ft_memset.c ft_atoi.c ft_isspace.c ft_strdup.c ft_strlen.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strncpy.c ft_strcat.c ft_strncat.c
 
-$(LIBRUSH): $(OBJS_RUSH) $(INCS_RUSH)
-	@echo Compiling Library: $@ ...
-	$(AR) $@ $^
+OBJS = ${SRCS:.c=.o}
 
-$(OBJ_MAIN): $(SRC_MAIN) $(INCS_RUSH)
-	@echo Compiling Main File: $@ ...
-	$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
+CC = CC
+RM = rm -rf
+AR = ar rc
+RANLIB = ranlib
 
-%.o: %.c $(INCS_RUSH)
-	@echo Compiling Objects Files: $@ ...
-	$(CC) -c $< $(CFLAGS) $(INCFLAGS) -o $@
+CFLAGS = -Wall -Werror -Wextra
+
+.c.o:
+	@echo Compiling Binary Files: $@ ...
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+$(NAME):
+	@echo Compiling Library File: $@ ...
+			${CC} $(CFLAGS) -c $(SRCS)
+			$(AR) $(NAME) $(OBJS)
+			$(RANLIB) $(NAME)
+
+all:
+	@echo Compiling Library (libft.a) File: $@ ...
+	$(NAME)
 
 clean:
-	@echo Deleting Objects Files: $@ ...
-	rm $(OBJS_RUSH) $(OBJ_MAIN)
+	@echo Cleaning The .o Generated Files: $@ ...
+			$(RM) ${OBJS}
 
-fclean: clean
-	@echo Library and Binary Files: $@ ...
-	rm $(LIBRUSH) $(PROGNAME)
+fclean:		
+	@echo Cleaning All (.o & libft.a) Generated Files:
+	clean
+	$(RM) $(NAME)
 
-re: fclean all
+re:
+	@echo Cleaning All (.o & libft.a) Generated Files & Remake Everything:
+	fclean all
+
+.PHONY:		all clean fclean re
