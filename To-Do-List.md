@@ -1,0 +1,2 @@
+Done:
+ft_memset	
