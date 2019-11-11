@@ -6,13 +6,13 @@
 #    By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 13:03:20 by adiaz-lo          #+#    #+#              #
-#    Updated: 2019/11/08 13:11:02 by adiaz-lo         ###   ########.fr        #
+#    Updated: 2019/11/11 12:38:37 by adiaz-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_memset.c ft_atoi.c ft_isspace.c ft_strdup.c ft_strlen.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strncpy.c ft_strcat.c ft_strncat.c
+SRCS = ft_memset.c ft_bzero.c ft_atoi.c ft_isspace.c ft_strdup.c ft_strlen.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strncpy.c ft_strcat.c ft_strncat.c 
 
 OBJS = ${SRCS:.c=.o}
 
