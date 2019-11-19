@@ -6,25 +6,26 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:31:34 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/08 11:02:58 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2019/11/19 13:40:18 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	int i;
+	size_t i;
+	char *s1;
 
-	if (n == 0)
-		return (0);
-	else
+	s1 = (char *)s;
+	if (n != 0)
 	{
 		i = 0;
 		while (i < n)
 		{
-			s[i] = 0;
+			s1[i] = 0;
+			i++;
 		}
-		s[i] = '\0';
+		s1[i] = '\0';
 	}
 }
