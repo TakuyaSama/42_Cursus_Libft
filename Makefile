@@ -6,15 +6,15 @@
 #    By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 13:03:20 by adiaz-lo          #+#    #+#              #
-#    Updated: 2019/11/19 11:38:25 by adiaz-lo         ###   ########.fr        #
+#    Updated: 2019/11/20 13:26:41 by adiaz-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_memset.c ft_bzero.c ft_atoi.c ft_strlen.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strncpy.c ft_strcat.c ft_strncat.c  
+SRCS_MAND = ft_memset.c ft_bzero.c ft_atoi.c ft_strlen.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c ft_atoi.c ft_isspace.c 
 
-OBJS = ${SRCS:.c=.o}
+OBJS = ${SRCS_MAND_MAND:.c=.o}
 
 CC = CC
 RM = rm -rf
@@ -29,7 +29,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 $(NAME):
 	@echo Compiling Library File: $@ ...
-			${CC} $(CFLAGS) -c $(SRCS)
+			${CC} $(CFLAGS) -c $(SRCS_MAND)
 			$(AR) $(NAME) $(OBJS)
 			$(RANLIB) $(NAME)
 

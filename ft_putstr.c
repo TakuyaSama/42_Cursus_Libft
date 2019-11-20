@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/12 11:26:08 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/20 13:37:39 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2019/11/20 11:58:44 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2019/11/20 12:00:37 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isspace(int c)
-{
-	unsigned char	value;
+#include "libft.h"
 
-	value = (unsigned char)c;
-	if (value == '\t' || value == '\n' || value == '\v' || value == '\f' || value == '\r' || value == ' ')
-		return (0);
-	else
-		return (1);
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		ft_putchar(*str);
+	}
 }
