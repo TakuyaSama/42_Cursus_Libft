@@ -6,7 +6,7 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 11:03:15 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/20 14:05:33 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2019/11/21 12:48:44 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,35 @@ void	ft_atoi_call()
 	printf("\natoi result test: %d", atoi(str));
 }
 
+void	ft_memmove_call()
+{
+	char *str1 = "Hello";
+	char *str2 = "World";
+
+	printf("\nft_atoi result test: %s", ft_memmove(str));
+	printf("\natoi result test: %s", memmove(str));
+}
+
+void	ft_strdup_call()
+{
+	char *str1 = "Hello";
+
+	printf("\nft_atoi result test: %p", ft_strdup(str));
+	printf("\natoi result test: %p", strdup(str));
+}
+
+void	ft_strdup_call()
+{
+	char *str1 = "Hello";
+
+	printf("\nft_atoi result test: %p", ft_strdup(str));
+	printf("\natoi result test: %p", strdup(str));
+}
+
 int		main(void)
 {
 	//ft_bzero_call();
 	//ft_tolower_call();
-	ft_atoi_call();
+	//ft_atoi_call();
+	ft_memmove_call();
 }

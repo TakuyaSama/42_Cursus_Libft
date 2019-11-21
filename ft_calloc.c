@@ -6,13 +6,14 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 12:33:07 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/20 13:11:58 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2019/11/21 13:32:23 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t )
+void	*ft_calloc(size_t count, size_t size)
 {
 	
+	return ();
 }

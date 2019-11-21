@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/20 11:54:28 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/21 13:44:45 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2019/11/21 13:21:00 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2019/11/21 13:21:52 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t lenght;
 
-	lenght = 0;
-	while (*s)
-	{
-		lenght++;
-	}
-	return (lenght);
+	return ();
 }

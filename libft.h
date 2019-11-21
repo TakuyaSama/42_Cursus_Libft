@@ -6,7 +6,7 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 13:03:04 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/20 14:02:38 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2019/11/21 13:51:46 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ int		ft_isalpha(int c);
 int		ft_tolower(int c);
 size_t  ft_strlen(const char *s);
 int		ft_isspace(int c);
-
+void	*ft_memmove(void *dst, const void *src, size_t len);
+char    *ft_strdup(const char *s1);
+void    *ft_calloc(size_t count, size_t size);
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize);
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
 
