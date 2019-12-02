@@ -16,7 +16,7 @@ SRCS_MAND = ft_memset.c ft_bzero.c ft_atoi.c ft_strlen.c ft_putchar.c ft_putstr.
 
 OBJS = ${SRCS_MAND_MAND:.c=.o}
 
-CC = CC
+CC = cc
 RM = rm -rf
 AR = ar rc
 RANLIB = ranlib
