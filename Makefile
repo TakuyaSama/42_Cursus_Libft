@@ -14,7 +14,7 @@ NAME = libft.a
 
 SRCS_MAND = ft_memset.c ft_bzero.c ft_atoi.c ft_strlen.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c ft_atoi.c ft_isspace.c ft_calloc.c ft_strdup.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlcpy.c 
 
-OBJS = ${SRCS_MAND_MAND:.c=.o}
+OBJS = ${SRCS_MAND:.c=.o}
 
 CC = cc
 RM = rm -rf
