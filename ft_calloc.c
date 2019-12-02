@@ -10,10 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * ft_calloc allocates memory for an array of count elements of size bytes each and returns a pointer to the allocated memory.
+ * For more info, please search for man calloc.
+ *
+**/ 
+
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	
-	return ();
+	if (count * size > 2147483647)
+	{
+		char	*str_err;
+
+		*str_err = "Error";
+		return (str_err);
+	}
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	return (ptr);
 }

@@ -51,24 +51,22 @@ void	ft_memmove_call()
 	char *str1 = "Hello";
 	char *str2 = "World";
 
-	printf("\nft_atoi result test: %s", ft_memmove(str));
-	printf("\natoi result test: %s", memmove(str));
+	printf("\nft_atoi result test: %p", ft_memmove(str1, str2, 4));
+	printf("\natoi result test: %p", memmove(str1, str2, 4));
 }
 
 void	ft_strdup_call()
 {
 	char *str1 = "Hello";
 
-	printf("\nft_atoi result test: %p", ft_strdup(str));
-	printf("\natoi result test: %p", strdup(str));
+	printf("\nft_atoi result test: %s", ft_strdup(str1));
+	printf("\natoi result test: %s", strdup(str1));
 }
 
-void	ft_strdup_call()
+void	ft_calloc_call()
 {
-	char *str1 = "Hello";
-
-	printf("\nft_atoi result test: %p", ft_strdup(str));
-	printf("\natoi result test: %p", strdup(str));
+	printf("\nft_calloc result test: %p", ft_calloc(ft_strlen("Hi"), sizeof("Hi")));
+	printf("\ncalloc result test: %p", calloc(ft_strlen("Hi"), sizeof("Hi")));
 }
 
 int		main(void)
@@ -76,5 +74,6 @@ int		main(void)
 	//ft_bzero_call();
 	//ft_tolower_call();
 	//ft_atoi_call();
-	ft_memmove_call();
+	//ft_memmove_call();
+	ft_calloc_call();
 }
