@@ -29,6 +29,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 char    *ft_strdup(const char *s1);
 void    *ft_calloc(size_t count, size_t size);
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize);
+void	*memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
 
