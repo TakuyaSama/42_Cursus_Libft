@@ -10,16 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** This function copies 'dstsize' of the string 'src' into 'dst' and returns the total length of the result string.
+*/
+
 #include "libft.h"
 
-size_t		ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
+	unsigned int	i;
+	int		counter;
 
+	if (!src)
+		return (0);
+	counter = (unsigned int)ft_strlen(src);
+	if (!dstsize)
+		return (counter);
 	i = 0;
-	while ()
+	while (src[i] && i < (dstsize - 1))
 	{
-		
+		dst[i] = src[i];
+		i++;
 	}
-	return ();
+	dst[i] = '\0';
+	return (counter);
 }

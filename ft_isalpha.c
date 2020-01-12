@@ -10,11 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+/*
+** Function that checks if 'c' is an alphabetic character
+For further information, please check Standard C Library function 'isalpha(int c)'
+*/
 
-int		ft_isalpha(int c)
+#include <libft.h>
+
+int	ft_isalpha(int c)
 {
-	unsigned char c_value;
-
-	c_value = (unsigned char)c;
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

@@ -10,44 +10,93 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME		= libft.a
 
-SRCS_MAND = ft_memset.c ft_bzero.c ft_atoi.c ft_strlen.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c ft_atoi.c ft_isspace.c ft_calloc.c ft_strdup.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlcpy.c 
+SRCS_MAND	= ft_memset.c		\
+		  ft_memmove.c		\
+		  ft_memchr.c		\
+		  ft_memcmp.c		\
+		  ft_memcpy.c		\
+		  ft_memccpy.c		\
+		  ft_bzero.c		\
+		  ft_atoi.c		\
+		  ft_strlen.c		\
+		  ft_strlcpy.c		\
+		  ft_strlcat.c		\
+		  ft_strchr.c		\
+		  ft_strrchr.c		\
+		  ft_strnstr.c		\
+		  ft_atoi.c		\
+		  ft_isalnum.c		\
+		  ft_isdigit.c		\
+		  ft_isalpha.c		\
+		  ft_isascii.c		\
+		  ft_isprint.c		\
+		  ft_tolower.c		\
+		  ft_toupper.c		\
+		  ft_calloc.c		\
+		  ft_strdup.c		\
+		  ft_itoa.c		\
+		  ft_substr.c		\
+		  ft_strjoin.c		\
+		  ft_strtrim.c		\
+		  ft_split.c		\
+		  ft_strmapi.c		\
+		  ft_putchar_fd.c	\
+		  ft_putstr_fd.c	\
+		  ft_putendl_fd.c	\
+		  ft_putnbr_fd.c	
 
-OBJS = ${SRCS_MAND:.c=.o}
+SRCS_BON	= ft_lstnew.c			\
+		  ft_lstadd_front.c		\
+		  ft_lstsize.c			\
 
-CC = cc
-RM = rm -rf
-AR = ar rc
-RANLIB = ranlib
 
-CFLAGS = -Wall -Werror -Wextra
 
-.c.o:
+OBJS_MAND	= ${SRCS_MAND:.c=.o}
+
+OBJS_BON	= ${SRCS_BON:.c=.o}
+
+CC		= cc
+
+RM		= rm -rf
+
+AR		= ar rcs
+
+RANLIB		= ranlib
+
+CFLAGS		= -Wall -Werror -Wextra
+
+.c.o	:
 	@echo Compiling Binary Files: $@ ...
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME):
+$(NAME)	:
 	@echo Compiling Library File: $@ ...
 			${CC} $(CFLAGS) -c $(SRCS_MAND)
-			$(AR) $(NAME) $(OBJS)
+			$(AR) $(NAME) $(OBJS_MAND)
 			$(RANLIB) $(NAME)
 
-all:
-	@echo Compiling Library (libft.a) File: $@ ...
+all	:
+	@echo Compiling Library (libft.a) File (Only Mandatory Part): $@ ...
 	$(NAME)
 
-clean:
-	@echo Cleaning The .o Generated Files: $@ ...
-			$(RM) ${OBJS}
+bonus	:
+	@echo Compiling Library (libft.a) File (Mandatory + Bonus Part): $@ ...
+	$(OBJS_MAND) $(OBJS_BON) libft.h
+	$(AR) $(NAME) $(OBJS_BON) $(OBJS_MAND)
 
-fclean:		
+clean	:
+	@echo Cleaning The .o Generated Files: $@ ...
+			$(RM) ${OBJS_MAND} ${OBJS_BON}
+
+fclean	:
 	@echo Cleaning All (.o & libft.a) Generated Files:
 	clean
 	$(RM) $(NAME)
 
-re:
+re	:
 	@echo Cleaning All (.o & libft.a) Generated Files & Remake Everything:
 	fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus

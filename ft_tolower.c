@@ -10,13 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** The function checks if the character received as an argument is an uppercase, it converts to lowercase, otherwise, it returns it without change.
+For further information, please check the standard C library function 'tolower(int c)'
+*/
+
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
-	{
-		c += 32;
-	}
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
 	return (c);
 }

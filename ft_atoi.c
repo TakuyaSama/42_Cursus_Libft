@@ -10,32 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ ** Function that converts a received as a parameter string to a integer
+ For further information, please check the Standard C Library function 'atoi(const char *str)'
+ */
+
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
 	int		sign;
 	int		result;
 
-	i = 0;
 	sign = 1;
 	result = 0;
-	while (0 == ft_isspace((int)str[i]))
+	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' || *str == '\r' || *str == ' ')
+		str++;
+	if (*str == '-')
+		sign *= -1;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (ft_isdigit(*str))
 	{
-		ft_putchar('H');
-		i++;
-	}
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - 48);
-		i++;
+		result = result * 10 + (*str++ - 48);
 	}
 	return (result * sign);
 }
