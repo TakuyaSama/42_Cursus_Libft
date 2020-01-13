@@ -98,9 +98,8 @@ fclean	:	clean
 		@echo Cleaning All ".o & libft.a" Generated Files:
 		$(RM) $(NAME)
 
-re	:	
+re	:	fclean all
 		@echo Cleaning All ".o & libft.a" Generated Files And Remake Everything:
-		fclean all
 
 
 .PHONY:		all clean fclean re bonus
