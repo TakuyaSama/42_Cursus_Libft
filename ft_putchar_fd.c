@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/20 11:58:44 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/20 12:00:37 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2020/01/13 11:55:06 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2020/01/13 11:56:59 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** This function outputs the 'c' character to the file descriptor 'fd' given by
+** parameter.
+*/
+
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	while (*str)
-	{
-		ft_putchar(*str);
-	}
+	write(fd, &c, 1);
 }

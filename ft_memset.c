@@ -6,23 +6,18 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:40:17 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/05 11:40:25 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2020/01/13 12:58:04 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *str, int c, size_t len)
 {
-	unsigned char	*b_value;
-	int				i;
+	unsigned char	*string;
 
-	b_value = (unsigned char*)b;
-	i = 0;
-	while (i < len)
-	{
-		b_value[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	string = (unsigned char*)str;
+	while (len-- > 0)
+		*(string++) = (unsigned char)c;
+	return (str);
 }

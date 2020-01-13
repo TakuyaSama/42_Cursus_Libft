@@ -6,7 +6,7 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 11:03:15 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/21 12:48:44 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2020/01/13 12:15:39 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,19 @@ void	ft_calloc_call()
 	printf("\ncalloc result test: %p", calloc(ft_strlen("Hi"), sizeof("Hi")));
 }
 
+void	ft_putnbr_call()
+{
+	ft_putnbr_fd(2147483647, 1);
+	ft_putnbr_fd(-2147483648, 1);
+	
+}
+
 int		main(void)
 {
 	//ft_bzero_call();
 	//ft_tolower_call();
 	//ft_atoi_call();
 	//ft_memmove_call();
-	ft_calloc_call();
+	//ft_calloc_call();
+	ft_putnbr_call();
 }

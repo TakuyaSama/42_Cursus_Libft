@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/20 12:33:07 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 09:29:39 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2020/01/13 11:42:22 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2020/01/13 11:56:40 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** This function allocates memory for an array of count elements of size bytes
-** each and returns a pointer to the allocated memory.
-** For further information, please check for Standard C Library function
-** 'calloc(size_t count, size_t size)'.
+** This function applies the function 'f()' to each character of the string
+** ('s') passed as argument to create a new string resulting from successive
+** applications of 'f()'.
 */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*array;
+	unsigned int	i;
+	char			*str;
 
-	if (!(array = (char *)malloc(size * count)))
+	if (!s || !f)
 		return (NULL);
-	return (ft_memset(array, 0, size * count));
+	if (!(str = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }

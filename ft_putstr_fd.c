@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 09:11:56 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 09:12:43 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2020/01/13 11:57:16 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2020/01/13 12:00:23 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** This function checks if the 'c' is a lowercase alphabetical character and if
-** that's the case, then it converts it to uppercase, otherwise, it leaves
-** unchanged
-** For further information, please check the Standard C Library Function
-** 'toupper(int c)'
+** This function outputs the string 's' to the given file descriptor ('fd').
 */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	if (s)
+		write(fd, s, ft_strlen(s));
 }

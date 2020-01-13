@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/19 13:41:14 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2019/11/20 12:00:51 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2020/01/13 09:51:27 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2020/01/13 09:54:22 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** This function returns a pointer to the first occurrence of the character 'c'
+** in the string 's'.
+** For further information, please check the Standard C Library function
+** 'strchr(const char *s, int c)'
+*/
+
 #include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strchr(const char *s, int c)
 {
-	write(1, &c, 1);
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	if (c == '\0')
+		return ((char *)s);
+	return (0);
 }

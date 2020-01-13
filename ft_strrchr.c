@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/12 11:18:21 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 09:27:25 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2020/01/13 10:01:17 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2020/01/13 10:01:43 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Function that converts a received as a parameter string to a integer
+** This function returns a pointer to the first ocurrence of the character
+** 'c' in the string 's'. Additionally, it locates the last occurrence of 'c'.
 ** For further information, please check the Standard C Library function
-** 'atoi(const char *str)'
+** 'strrchr(const char *s, int c)'.
 */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		sign;
-	int		result;
+	const char	*str;
 
-	sign = 1;
-	result = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
-			|| *str == '\r' || *str == ' ')
-		str++;
-	if (*str == '-')
-		sign *= -1;
-	if (*str == '+' || *str == '-')
-		str++;
-	while (ft_isdigit(*str))
+	str = s;
+	while (*s)
+		s++;
+	if (c == 0)
+		return ((char *)s);
+	while (s >= str)
 	{
-		result = result * 10 + (*str++ - 48);
+		if (*s == c)
+			return ((char *)s);
+		s--;
 	}
-	return (result * sign);
+	return (0);
 }

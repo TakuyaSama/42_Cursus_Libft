@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 09:11:56 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 09:12:43 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2020/01/13 10:14:54 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2020/01/13 10:34:36 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** This function checks if the 'c' is a lowercase alphabetical character and if
-** that's the case, then it converts it to uppercase, otherwise, it leaves
-** unchanged
-** For further information, please check the Standard C Library Function
-** 'toupper(int c)'
+** This function checks if 'c' is a printable character.
+** For further information, please check the Standard C Library function
+** 'isprint(int c))'
 */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int		ft_isprint(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	return (c >= 32 && c <= 126);
 }

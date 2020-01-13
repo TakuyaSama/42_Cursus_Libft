@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 09:11:56 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 09:12:43 by adiaz-lo         ###   ########.fr       */
+/*   Created: 2020/01/13 12:04:43 by adiaz-lo          #+#    #+#             */
+/*   Updated: 2020/01/13 12:15:42 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** This function checks if the 'c' is a lowercase alphabetical character and if
-** that's the case, then it converts it to uppercase, otherwise, it leaves
-** unchanged
-** For further information, please check the Standard C Library Function
-** 'toupper(int c)'
+** This function outputs the integer 'n' to given file descriptor 'fd'.
 */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	unsigned int aux;
+
+	aux = n;
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		aux = (unsigned int)(n * -1);
+	}
+	if (aux > 9)
+		ft_putnbr_fd(aux / 10, fd);
+	ft_putchar_fd((char)(aux % 10 + '0'), fd);
 }
