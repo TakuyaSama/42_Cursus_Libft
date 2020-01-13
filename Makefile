@@ -50,12 +50,12 @@ SRCS_MAND	=	ft_memset.c		\
 SRCS_BON	=	ft_lstnew.c			\
 		  		ft_lstadd_front.c	\
 		  		ft_lstsize.c		\
-		  		ft_lstlast			\
-				ft_lstadd_back		\
-				ft_lstdelone		\
-				ft_lstclear			\
-				ft_lstiter			\
-				ft_lstmap
+		  		ft_lstlast.c		\
+				ft_lstadd_back.c	\
+				ft_lstdelone.c		\
+				ft_lstclear.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c
 
 OBJS_MAND	= ${SRCS_MAND:.c=.o}
 
@@ -71,36 +71,36 @@ RANLIB		= ranlib
 
 CFLAGS		= -Wall -Werror -Wextra
 
-all	:
-	@echo Compiling Library "libft.a" File "Only Mandatory Part": $@ ...
-	$(NAME)
+all	:	$(NAME)
+		@echo Compiling Library "libft.a" File "Only Mandatory Part": $@ ...
 
-$(NAME)	:
+$(NAME)	:	$(OBJS_MAND)
+
 		@echo Compiling Library File: $@ ...
-			${CC} $(CFLAGS) -c $(SRCS_MAND)
-			$(AR) $(NAME) $(OBJS_MAND)
-			$(RANLIB) $(NAME)
+		${CC} $(CFLAGS) -c $(SRCS_MAND)
+		$(AR) $(NAME)
+		$(RANLIB) $(NAME)
 
 .c.o	:
 		@echo Compiling Binary Files: $@ ...
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-bonus	:
-		@echo Compiling Library "libft.a" File "Mandatory + Bonus Part": $@ ...
-		$(OBJS_MAND) $(OBJS_BON) libft.h
+bonus	:	$(OBJS_MAND) $(OBJS_BON) libft.h
 		$(AR) $(NAME) $(OBJS_BON) $(OBJS_MAND)
+		@echo Compiling Library "libft.a" File "Mandatory + Bonus Part": $@ ...
 
-clean	:
+clean	:	
 		@echo Cleaning The .o Generated Files: $@ ...
 		$(RM) ${OBJS_MAND} ${OBJS_BON}
 
-fclean	:
-		@echo Cleaning All (.o & libft.a" Generated Files:
-		clean
+
+fclean	:	clean
+		@echo Cleaning All ".o & libft.a" Generated Files:
 		$(RM) $(NAME)
 
-re	:
-	@echo Cleaning All ".o & libft.a" Generated Files & Remake Everything:
-	fclean all
+re	:	
+		@echo Cleaning All ".o & libft.a" Generated Files And Remake Everything:
+		fclean all
+
 
 .PHONY:		all clean fclean re bonus
