@@ -75,7 +75,6 @@ all	:	$(NAME)
 		@echo Compiling Library "libft.a" File "Only Mandatory Part": $@ ...
 
 $(NAME)	:	$(OBJS_MAND)
-
 		@echo Compiling Library File: $@ ...
 		${CC} $(CFLAGS) -c $(SRCS_MAND)
 		$(AR) $(NAME)
