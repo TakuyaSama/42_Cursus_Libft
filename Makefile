@@ -72,7 +72,7 @@ RANLIB		= ranlib
 CFLAGS		= -Wall -Werror -Wextra
 
 all	:
-	@echo Compiling Library (libft.a) File (Only Mandatory Part): $@ ...
+	@echo Compiling Library "libft.a" File "Only Mandatory Part": $@ ...
 	$(NAME)
 
 $(NAME)	:
@@ -86,7 +86,7 @@ $(NAME)	:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 bonus	:
-		@echo Compiling Library (libft.a) File (Mandatory + Bonus Part): $@ ...
+		@echo Compiling Library "libft.a" File "Mandatory + Bonus Part": $@ ...
 		$(OBJS_MAND) $(OBJS_BON) libft.h
 		$(AR) $(NAME) $(OBJS_BON) $(OBJS_MAND)
 
@@ -95,12 +95,12 @@ clean	:
 		$(RM) ${OBJS_MAND} ${OBJS_BON}
 
 fclean	:
-		@echo Cleaning All (.o & libft.a) Generated Files:
+		@echo Cleaning All (.o & libft.a" Generated Files:
 		clean
 		$(RM) $(NAME)
 
 re	:
-	@echo Cleaning All (.o & libft.a) Generated Files & Remake Everything:
+	@echo Cleaning All ".o & libft.a" Generated Files & Remake Everything:
 	fclean all
 
 .PHONY:		all clean fclean re bonus
