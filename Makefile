@@ -6,7 +6,7 @@
 #    By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 13:03:20 by adiaz-lo          #+#    #+#              #
-#    Updated: 2020/01/13 13:06:20 by adiaz-lo         ###   ########.fr        #
+#    Updated: 2020/01/14 09:09:17 by adiaz-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,9 @@ AR		= ar rcs
 
 RANLIB		= ranlib
 
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS += -Wall -Werror -Wextra -g
+
+LFLAGS += -I.
 
 all	:	$(NAME)
 		@echo Compiling Library "libft.a" File "Only Mandatory Part": $@ ...
