@@ -6,7 +6,7 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 11:54:28 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 08:56:05 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2020/01/14 09:27:36 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlen(const char *s)
 	size_t lenght;
 
 	lenght = 0;
-	while (*s)
+	while (*s++)
 	{
 		lenght++;
 	}

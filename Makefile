@@ -6,7 +6,7 @@
 #    By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 13:03:20 by adiaz-lo          #+#    #+#              #
-#    Updated: 2020/01/14 09:09:17 by adiaz-lo         ###   ########.fr        #
+#    Updated: 2020/01/14 09:16:17 by adiaz-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,13 +78,12 @@ all	:	$(NAME)
 
 $(NAME)	:	$(OBJS_MAND)
 		@echo Compiling Library File: $@ ...
-		${CC} $(CFLAGS) -c $(SRCS_MAND)
-		$(AR) $(NAME)
+		$(AR) $(NAME) $(OBJS_MAND)
 		$(RANLIB) $(NAME)
 
-.c.o	:
+%.o:	%.c
 		@echo Compiling Binary Files: $@ ...
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)
 
 bonus	:	$(OBJS_MAND) $(OBJS_BON) libft.h
 		$(AR) $(NAME) $(OBJS_BON) $(OBJS_MAND)
