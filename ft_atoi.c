@@ -6,7 +6,7 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 11:18:21 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 09:27:25 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2020/01/14 09:42:38 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,36 @@
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+/*
+** This auxiliar function checks if the character received by parameter is a
+** space or not.
+** For further information, please check the Standard C Library function
+** 'isspace(int c)'.
+*/
+
+static int	ft_isspace(int c)
+{
+	if (c == '\v' || c == '\n' || c == '\t' ||
+		c == '\r' || c == '\f' || c == ' ')
+		return (1);
+	return (0);
+}
+
+int			ft_atoi(const char *str)
 {
 	int		sign;
 	int		result;
 
 	sign = 1;
 	result = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
-			|| *str == '\r' || *str == ' ')
+	while (ft_isspace(*str))
 		str++;
-	if (*str == '-')
-		sign *= -1;
 	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign *= -1;
 		str++;
+	}
 	while (ft_isdigit(*str))
 	{
 		result = result * 10 + (*str++ - 48);
