@@ -6,7 +6,7 @@
 /*   By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:12:22 by adiaz-lo          #+#    #+#             */
-/*   Updated: 2020/01/13 11:32:38 by adiaz-lo         ###   ########.fr       */
+/*   Updated: 2020/01/14 08:36:58 by adiaz-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ static int		ft_div_counter(char const *s, char c)
 }
 
 /*
-** This auxiliar function segments the 's' array into parts. 
- */
+** This auxiliar function segments the 's' array into parts.
+*/
 
 static char		*ft_segmentator(char const *s, char c, int i)
 {
