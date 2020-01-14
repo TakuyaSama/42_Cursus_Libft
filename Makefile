@@ -6,7 +6,7 @@
 #    By: adiaz-lo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 13:03:20 by adiaz-lo          #+#    #+#              #
-#    Updated: 2020/01/14 10:14:35 by adiaz-lo         ###   ########.fr        #
+#    Updated: 2020/01/14 10:31:41 by adiaz-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS_MAND	=	ft_memset.c		\
 		 	 	ft_strchr.c		\
 		 		ft_strrchr.c	\
 		  		ft_strnstr.c	\
+				ft_strncmp.c	\
 		  		ft_atoi.c		\
 		  		ft_isalnum.c	\
 		  		ft_isdigit.c	\
@@ -45,8 +46,7 @@ SRCS_MAND	=	ft_memset.c		\
 				ft_putchar_fd.c	\
 				ft_putstr_fd.c	\
 				ft_putendl_fd.c	\
-				ft_putnbr_fd.c	\
-				ft_strncmp.c
+				ft_putnbr_fd.c	
 
 SRCS_BON	=	ft_lstnew.c			\
 		  		ft_lstadd_front.c	\
